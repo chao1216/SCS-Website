@@ -227,7 +227,7 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 header {
-  background: rgba(100,100,100,1);
+  background: white;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center top;
@@ -236,7 +236,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   text-align: center;
-  color: white;
+  color: black;
 }
 header .intro-text {
   padding-top: 100px;
