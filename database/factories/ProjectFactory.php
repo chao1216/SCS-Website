@@ -22,8 +22,7 @@
 $factory->define(App\Project::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
-        'description' => $faker->paragraph,
-        'link_to_github' =>
-            'https://www.github.com/' . 'profile-name/' . 'my-repo'
+        'caption' => $faker->paragraph,
+        'img_url' => 'https://tctechcrunch2011.files.wordpress.com/2015/04/codecode.jpg?w=738'
     ];
 });

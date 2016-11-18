@@ -16,8 +16,8 @@ class CreateProjectTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('description', 3000);
-            $table->string('link_to_github');
+            $table->string('img_url', 300);
+            $table->string('caption', 250);
             $table->timestamps();
         });
     }
