@@ -5,7 +5,7 @@ To get up and running, run the following commands in a terminal:
 `git clone https://github.com/Sewanee-Computing-Club/SCS-Website`<br>
 `cd SCS-Website`<br>
 `./install.sh`<br>
-`npm install` (note that this might need to be run as sudo user)<br>
+`npm install`<br>
 `npm install -g protractor` (only need to do this once, installs protactor globally)
 
 If you get an EACESS error from npm, you need to 
