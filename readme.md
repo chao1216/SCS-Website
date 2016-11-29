@@ -2,11 +2,11 @@ So this is the Sewanee Computing Society website.
 
 To get up and running, run the following commands in a terminal:
 
-`git clone https://github.com/Sewanee-Computing-Club/SCS-Website`
-`cd SCS-Website`
-`./install.sh`
-`npm install` (note that this might need to be run as sudo user)
-`npm install -g protractor` (only need to do this once, installs protactor globally)
+`git clone https://github.com/Sewanee-Computing-Club/SCS-Website`<br>
+`cd SCS-Website`<br>
+`./install.sh`<br>
+`npm install` (note that this might need to be run as sudo user)<br>
+`npm install -g protractor` (only need to do this once, installs protactor globally)<br>
 
 You will then need to configure your mysql database name,
 user name, and password in the .env file. Run php artisan migrate --seed to seed and migrate tables
@@ -21,7 +21,7 @@ Karma
 
 Assuming you ran npm install, then you should only 
 have to run `karma start`. It will watch your test files 
-located in public/app/**/*.js and rerun the tests when you change
+located in `public/app/**/*.js` and rerun the tests when you change
 any of those files
 
 PHP tests
