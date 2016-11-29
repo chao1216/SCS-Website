@@ -9,9 +9,10 @@ To get up and running, run the following commands in a terminal:
 `npm install -g protractor` (only need to do this once, installs protactor globally)<br>
 
 You will then need to configure your mysql database name,
-user name, and password in the .env file. Run php artisan migrate --seed to seed and migrate tables
+user name, and password in the .env file. <br>
+Run `php artisan migrate --seed` to seed and migrate tables
 
-To launch site:
+<strong>To launch site:</strong>
 
 `php artisan serve`
 
