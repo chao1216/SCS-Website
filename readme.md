@@ -19,7 +19,7 @@ To run tests:
 
 Karma
 
-Assuming you ran npm install, then you should only 
+Assuming you ran `npm install`, then you should only 
 have to run `karma start`. It will watch your test files 
 located in `public/app/**/*.js` and rerun the tests when you change
 any of those files
@@ -30,7 +30,7 @@ Just run phpunit from project root directory
 
 Protractor
 
-Assuming you ran npm install -g protractor and you have a working installation of JDK, then run:
+Assuming you ran `npm install -g protractor` and <strong>you have a working installation of JDK</strong>, then run:
 
 `webdriver-manager update`
 `webdriver-manager start`
