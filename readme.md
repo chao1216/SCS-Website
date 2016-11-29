@@ -20,6 +20,7 @@ Run `php artisan migrate --seed` to seed and migrate tables
 Tests
 
 <strong>Karma</strong>
+Located alongside the features in `public/app/**/*.js`
 
 Assuming you ran `npm install`, then you should only 
 have to run `karma start`. It will watch your test files 
@@ -27,6 +28,7 @@ located in `public/app/**/*.js` and rerun the tests when you change
 any of those files
 
 <strong>PHP</strong>
+Located in `tests/**/*Test.php`
 
 Just run phpunit from project root directory 
 
