@@ -17,18 +17,18 @@ To launch site:
 
 To run tests:
 
-Karma
+<strong>Karma</strong>
 
 Assuming you ran `npm install`, then you should only 
 have to run `karma start`. It will watch your test files 
 located in `public/app/**/*.js` and rerun the tests when you change
 any of those files
 
-PHP tests
+<strong>PHP tests</strong>
 
 Just run phpunit from project root directory 
 
-Protractor
+<strong>Protractor</strong>
 
 Assuming you ran `npm install -g protractor` and <strong>you have a working installation of JDK</strong>, then run:
 
@@ -40,7 +40,7 @@ This will start up the selenium server which will run the tests.
 Unlike karma, you have to run the tests manually.
 This can be done with protractor conf.js (from project root directory)
 
-Potential problems:
+<strong>Potential problems:</strong>
 
 1. You must have a working installation of the JDK in your path.
 You can check this with java --version; if it says command not found, you need to install the JDK
