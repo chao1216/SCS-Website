@@ -23,6 +23,18 @@ Route::group(['prefix' => 'projects'], function () {
         ->name('projects_show');
 });
 
+Route::get('members', function () {
+    return view('members.members');
+})->name('members');
+
 Route::get('about', 'AboutController@show')->name('about');
 
+// API Routes
+Route::group(['prefix' => 'api/v1/'], function () {
+    // Members API Routes
+    Route::get('members/{id?}', 'MembersController@show');
+
+
+    //
+});
 Auth::routes();

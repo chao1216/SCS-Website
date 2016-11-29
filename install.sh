@@ -1,7 +1,7 @@
 #!/bin/bash
 
 composer install
-mv .env.example .env
+cp .env.example .env
 php artisan key:generate
 
 printf "Don't forget to change your database config in .env file, and migrate

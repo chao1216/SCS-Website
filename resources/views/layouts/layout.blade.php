@@ -21,7 +21,7 @@ ylesheet" type="text/css">
 
         <ul class="nav nav-tabs col-lg-12 col-md-12 hidden-sm hidden-xs center-block">
             <li id="home" class="col-lg-2 col-md-2"><a href= {{route('home')}}>{{config('app.name')}}</a></li>
-            <li id="news" class="col-lg-2 col-md-2"><a href= {{ route('news') }}>News</a></li>
+            <li id="members" class="col-lg-2 col-md-2"><a href= {{ route('members') }}>Members</a></li>
             <li id="projects" class="col-lg-2 col-md-2"><a href= {{route('projects_show')}}>Projects</a></li>
             <li id="about" class="col-lg-2 col-md-2"><a href= {{route('about')}}>About Us</a></li>
             <!-- Authentication Links -->
