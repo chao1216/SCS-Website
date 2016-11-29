@@ -16,20 +16,22 @@ Run `php artisan migrate --seed` to seed and migrate tables
 
 `php artisan serve`
 
-<u>Tests</u>
+
+Tests
 
 <strong>Karma</strong>
 
 Assuming you ran `npm install`, then you should only 
 have to run `karma start`. It will watch your test files 
-located in `public/app/**/*.js` and rerun the tests when you change
+located in public/app/**/*.js and rerun the tests when you change
 any of those files
 
-<strong>PHP tests</strong>
+<strong>PHP</strong>
 
 Just run phpunit from project root directory 
 
 <strong>Protractor</strong>
+e2e tests are located in public/app/e2e-tests/**/*.js
 
 Assuming you ran `npm install -g protractor` and <strong>you have a working installation of JDK</strong>, then run:
 
