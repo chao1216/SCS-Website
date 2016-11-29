@@ -16,7 +16,7 @@ Run `php artisan migrate --seed` to seed and migrate tables
 
 `php artisan serve`
 
-To run tests:
+<u>Tests</u>
 
 <strong>Karma</strong>
 
