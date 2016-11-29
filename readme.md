@@ -6,7 +6,10 @@ To get up and running, run the following commands in a terminal:
 `cd SCS-Website`<br>
 `./install.sh`<br>
 `npm install` (note that this might need to be run as sudo user)<br>
-`npm install -g protractor` (only need to do this once, installs protactor globally)<br>
+`npm install -g protractor` (only need to do this once, installs protactor globally)
+
+If you get an EACESS error from npm, you need to 
+<a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">change your permissions</a>
 
 You will then need to configure your mysql database name,
 user name, and password in the .env file. <br>
