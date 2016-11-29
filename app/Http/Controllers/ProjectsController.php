@@ -12,5 +12,4 @@ class ProjectsController extends Controller
         $projects = Project::all();
         return view('projects.projects', compact('projects'));
     }
-
 }

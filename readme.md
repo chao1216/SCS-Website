@@ -1,27 +1,46 @@
-# Laravel PHP Framework
+So this is the Sewanee Computing Society website. 
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+To get up and running, run the following commands in a terminal:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+0. git clone https://github.com/Sewanee-Computing-Club/SCS-Website
+1. cd SCS-Website
+2. ./install.sh
+3. npm install (note that this might need to be run as sudo user)
+4. npm install -g protractor (only need to do this once, installs protactor globally)
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+You will then need to configure your mysql database name,
+user name, and password in the .env file. Run php artisan migrate --seed to seed and migrate tables
 
-## Official Documentation
+To launch site:
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+php artisan serve
 
-## Contributing
+To run tests:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Karma
 
-## Security Vulnerabilities
+Assuming you ran npm install, then you should only 
+have to run karma start. It will watch your test files 
+located in public/app/**/*.js and rerun the tests when you change
+any of those files
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+PHP tests
 
-## License
+Just run phpunit from project root directory 
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Protractor
+
+Assuming you ran npm install -g protractor and you have a working installation of JDK, then run:
+
+webdriver-manager update
+webdriver-manager start
+
+This will start up the selenium server which will run the tests.
+
+Unlike karma, you have to run the tests manually.
+This can be done with protractor conf.js (from project root directory)
+
+Potential problems:
+
+You must have a working installation of the JDK in your path.
+You can check this with java --version; if it says command not found, you need to install the JDK
