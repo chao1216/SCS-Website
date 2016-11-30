@@ -15,8 +15,6 @@ class RegisterTest extends TestCase
      */
     public function register()
     {
-
-
         $this->visit('register')
             ->type('bob', 'name')
             ->type('hello1@in.com', 'email')

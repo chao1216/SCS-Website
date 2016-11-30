@@ -1,11 +1,27 @@
 describe('MembersController', function() {
+    var $httpBackend, ctrl, API;
+    var scope = {};
 
+    // Load the module that uses membersController
     beforeEach(module('memberApp'));
 
-    it('should create a phones array with nothing in it', inject(function($controller) {
-        var scope = {};
-        var ctrl = $controller('MembersController', {$scope: scope});
-        expect(scope.members.length).toBe(0);
+    // load the controller using built-in $controller service, inject the $httpBackend service
+    // and the API_URL constant defined in the memberApp
+    beforeEach(inject(function ($controller, _$httpBackend_, API_URL) {
+        API = API_URL;
+        $httpBackend = _$httpBackend_;
+        // mock a call to the API_URL/members url
+        $httpBackend.expectGET(API_URL + 'members').respond([{name : "Member of Computing Club",
+                                                              github_link_url : "http://github.com"}]);
+        // load MembersController with the given scope
+        ctrl = $controller('MembersController', {$scope: scope});
     }));
 
+    it('should create a phones array with nothing in it', function() {
+        expect(scope.members).toEqual([]);
+        // have to flush to get the mocked response
+        $httpBackend.flush();
+        expect(scope.members).toEqual([{name : "Member of Computing Club",
+                                        github_link_url : "http://github.com"}]);
+    });
 });

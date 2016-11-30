@@ -7,7 +7,7 @@
 
     <div ng-app="memberApp">
 
-    <div id="about-members" ng-controller="MembersContoller">
+    <div id="about-members" ng-controller="MembersController">
         <div ng-repeat="member in members">
 
         <div class="column">

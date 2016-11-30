@@ -23,6 +23,8 @@ Route::group(['prefix' => 'projects'], function () {
         ->name('projects_show');
 });
 
+Route::get('profile', 'ProfileController@show')->name('profile');
+
 Route::get('members', function () {
     return view('members.members');
 })->name('members');

@@ -19,7 +19,9 @@ module.exports = function(config) {
       '../../node_modules/angular-mocks/angular-mocks.js',
       'app.js',
       'members/membersController.js',
-      'members/membersController.spec.js'
+      'members/membersController.spec.js',
+      'profile/profileController.js',
+      'profile/profileController.spec.js'
     ],
 
 
