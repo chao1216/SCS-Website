@@ -12,7 +12,7 @@ cp .env.example .env
 php artisan key:generate
 npm install
 check_status $? "You need to install npm/nodejs or add it to your PATH/configure the installation directory. Download Link: https://nodejs.org/en/download/"
-protractor
+protractor --version
 check_status $? "You need to install protractor or you may need to install it globally with npm install -g protractor. See the readme file for more instructions."
 
 
