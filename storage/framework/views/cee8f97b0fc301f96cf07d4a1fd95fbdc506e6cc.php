@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet" href= <?php echo e(asset('css/app.css')); ?>>
     <link rel="stylesheet" href= <?php echo e(asset('css/agency.css')); ?>>
-    <link rel="stylesheet" href= <?php echo e(asset('css/containerStyle.css')); ?>>
+    <link rel="stylesheet" href= <?php echo e(asset('css/NavContainerStyle.css')); ?>>
     <script src=<?php echo e(asset('js/activeLinks.js')); ?>></script>
     <script src= <?php echo e(asset('js/app.js')); ?>></script>
 </head>
