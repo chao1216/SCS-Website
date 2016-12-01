@@ -1,16 +1,12 @@
 @extends('layouts.layout')
 @section('title') <title>SCS | Team</title> @stop
 @section('body')
-
+    <link rel="stylesheet" href= {{asset('css/membersStyle.css')}}>
     <script src="app/app.js"></script>
     <script src="app/members/membersController.js"></script>
 
-    <div ng-app="memberApp">
-
-    <div id="about-members" ng-controller="MembersController">
-        <div ng-repeat="member in members">
-
-        <div class="column">
+    <header class="intro-header">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
@@ -40,8 +36,8 @@
                             <h2>@{{ member.name }}</h2>
                             <h3>Title</h3>
                             <p>@{{ member.biography }}</p>
-                            <a href="@{{ member.githubProfileLink }}">GitHub</a><br>
-                            <a href="@{{ member.linkedInLink }}">LinkedIn</a>
+                            <a href="@{{ member.github_profile_link }}">GitHub</a><br>
+                            <a href="@{{ member.linkedIn_link }}">LinkedIn</a>
                         </div>
                     </div>
                     <div ng-show="$index % 2 != 0">
@@ -51,8 +47,8 @@
                             <!-- TODO: Add title into database -->
                             <h3>Title</h3>
                             <p>@{{ member.biography }}</p>
-                            <a href="@{{ member.githubProfileLink }}">GitHub</a><br>
-                            <a href="@{{ member.linkedInLink }}">LinkedIn</a>
+                            <a href="@{{ member.github_profile_link }}">GitHub</a><br>
+                            <a href="@{{ member.linkedIn_link }}">LinkedIn</a>
                         </div>
 
                         <div class="column">
