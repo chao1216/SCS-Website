@@ -5,11 +5,13 @@ To get up and running, run the following commands in a terminal:
 `git clone https://github.com/Sewanee-Computing-Club/SCS-Website`<br>
 `cd SCS-Website`<br>
 `./install.sh`<br>
-`npm install`<br>
-`npm install -g protractor` (only need to do this once, installs protactor globally)
 
-If you get an EACESS error from npm, you need to 
+You may get several messages saying you need to install either composer, protractor, or npm/nodejs
+
+If you get an EACESS error message when running ./install.sh, you need to 
 <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">change your permissions</a>
+
+A temporary fix is to run `sudo npm install` but not recommended.
 
 You will then need to configure your mysql database name,
 user name, and password in the .env file. <br>
