@@ -51,8 +51,6 @@ class LoginTest extends TestCase
             ->type($this->testUser->email, 'email')
             ->type('secret', 'password')
             ->press('Login');
-        /*->seePageIs('/')
-        ->see($this->testUser->name);*/
     }
 
     /**

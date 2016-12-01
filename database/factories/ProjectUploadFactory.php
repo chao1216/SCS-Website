@@ -21,8 +21,8 @@
 $factory->define(App\ProjectUploads::class, function (Faker\Generator $faker) {
     $projects = \App\Project::orderByRaw("RAND()")->first();
     return [
-        'pic_name' => $faker->name,
-        'file_path' => '/path/to/pic_file',
-        'project_id' => $projects->id
+        'picName' => $faker->name,
+        'filePath' => '/path/to/pic_file',
+        'projectId' => $projects->id
     ];
 });

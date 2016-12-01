@@ -5,4 +5,5 @@
 {{--Angular JS Scripts --}}
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 

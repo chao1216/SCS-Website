@@ -23,7 +23,21 @@ Route::group(['prefix' => 'projects'], function () {
         ->name('projects_show');
 });
 
-Route::get('profile', 'ProfileController@show')->name('profile');
+// Api Routes
+Route::group(['namespace' => 'api', 'prefix' => 'api/v1'],
+    function()
+{
+    // Members API Routes
+    Route::get('members/{id?}', 'ApiMembersController@show');
+    // Profile API Routes
+    Route::get('profile/{id?}', 'ApiProfileController@show');
+    Route::post('profile/{id?}', 'ApiProfileController@update');
+    Route::get('temp', 'ApiProfileController@temp');
+});
+
+Route::get('profile', 'ProfileController@show')
+  ->name('profile');
+
 
 Route::get('members', function () {
     return view('members.members');
@@ -31,12 +45,4 @@ Route::get('members', function () {
 
 Route::get('about', 'AboutController@show')->name('about');
 
-// API Routes
-Route::group(['prefix' => 'api/v1/'], function () {
-    // Members API Routes
-    Route::get('members/{id?}', 'MembersController@show');
-
-
-    //
-});
 Auth::routes();

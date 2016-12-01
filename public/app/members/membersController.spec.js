@@ -17,7 +17,8 @@ describe('MembersController', function() {
         ctrl = $controller('MembersController', {$scope: scope});
     }));
 
-    it('should create a phones array with nothing in it', function() {
+    it('should create an array of the members data for display on members page', function() {
+        // members empty before flush/response
         expect(scope.members).toEqual([]);
         // have to flush to get the mocked response
         $httpBackend.flush();

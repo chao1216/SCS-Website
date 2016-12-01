@@ -28,8 +28,8 @@
                 <h2>@{{ member.name }}</h2>
                 <h3>Title</h3>
                 <p>@{{ member.biography }}</p>
-                <a href="@{{ member.github_profile_link }}">GitHub</a><br>
-                <a href="@{{ member.linkedIn_link }}">LinkedIn</a>
+                <a href="@{{ member.githubProfileLink }}">GitHub</a><br>
+                <a href="@{{ member.linkedInLink }}">LinkedIn</a>
             </div>
         </div>
         </div>

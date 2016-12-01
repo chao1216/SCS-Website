@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
-use App\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\User;
 
-
-
-class MembersController extends Controller
+class ApiMembersController extends Controller
 {
     /**
      * TODO: write test for this function

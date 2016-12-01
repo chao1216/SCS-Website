@@ -9,8 +9,13 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Application Test Suite">
+        <!-- Test Suite that runs all tests in application -->
+        <testsuite name="App">
             <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+        <!-- Test Suite for testing Api Laravel Controllers -->
+        <testsuite name="api">
+            <directory suffix="Test.php">./tests/api</directory>
         </testsuite>
     </testsuites>
     <filter>

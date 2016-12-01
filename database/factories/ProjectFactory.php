@@ -23,6 +23,6 @@ $factory->define(App\Project::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'caption' => $faker->paragraph,
-        'img_url' => 'https://tctechcrunch2011.files.wordpress.com/2015/04/codecode.jpg?w=738'
+        'imgUrl' => 'https://tctechcrunch2011.files.wordpress.com/2015/04/codecode.jpg?w=738'
     ];
 });

@@ -27,9 +27,9 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'biography' => 'lkdfjdslkkfjsdlfjdf',
-        'linkedIn_link' => 'https://linkedin.com',
-        'github_profile_link' => 'https://github.com/',
-        'picture_path' => 'path/to/user/picture',
+        'linkedInLink' => 'https://linkedin.com',
+        'githubProfileLink' => 'https://github.com/',
+        'picturePath' => 'path/to/user/picture',
         'remember_token' => str_random(10)
     ];
 });
