@@ -88,10 +88,14 @@ hr.small {
     font-family: 'PT Sans Narrow', sans-serif;
     margin-left: 0;
     padding-left: 0;
+
 }
 
-.member-content p, a {
+.member-content p, .member-content a {
     font-size: 14px;
+
+
+
 }
 .single-row{
     margin-bottom: 16px;
