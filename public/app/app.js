@@ -3,4 +3,3 @@ var memberApp = angular.module('memberApp', [])
 
 var profileApp = angular.module('profileApp', [])
 .constant('API_URL', 'http://localhost:8000/api/v1/');
-
