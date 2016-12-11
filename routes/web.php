@@ -32,7 +32,9 @@ Route::group(['namespace' => 'api', 'prefix' => 'api/v1'],
     // Profile API Routes
     Route::get('profile/{id?}', 'ApiProfileController@show');
     Route::post('profile/{id?}', 'ApiProfileController@update');
-    Route::get('temp', 'ApiProfileController@temp');
+
+    // Testing the relationships
+    Route::get('profile/projects/{projectId}', 'ApiProfileController@updateProjects');
 });
 
 Route::get('profile', 'ProfileController@show')
@@ -44,11 +46,5 @@ Route::get('members', function () {
 })->name('members');
 
 Route::get('about', 'AboutController@show')->name('about');
-
-// Testing the relationships
-Route::get('test', function() {
-    $project = \App\Models\Projects\Project::find(1);
-    return $project->users;
-});
 
 Auth::routes();

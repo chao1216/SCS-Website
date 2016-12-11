@@ -1,5 +1,13 @@
+/*
+
+Helpful tutorial for later
+ http://www.bradoncode.com/blog/2015/06/26/unit-testing-http-ngmock-fundamentals/
+ http://www.bradoncode.com/blog/2015/06/16/unit-test-http-ngmock-passthrough/
+
+ */
+
 describe('ProfileController', function() {
-  var $httpBackend, ctrl, API;
+  var $httpBackend, API;
   var scope = {};
 
   // Load the module that uses membersController
@@ -14,7 +22,7 @@ describe('ProfileController', function() {
     $httpBackend.expectGET(API_URL + 'profile')
        .respond([{profile: "Member Profile Data"}]);
     // load MembersController with the given scope
-    ctrl = $controller('ProfileController', {$scope: scope});
+    $controller('ProfileController', {$scope: scope});
   }));
 
   it('should create a profile array containing member profile data', function() {

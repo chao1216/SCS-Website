@@ -47,7 +47,7 @@ class ApiProfileControllerTest extends TestCase
      */
     public function assertProfileAttributesReturned()
     {
-        $returnData = User::find($this->testUser->id);
+        $returnData = User::with('projects')->find($this->testUser->id);
         $this->login()
             ->visit(ApiProfileControllerTest::API_URL . 'profile')
             ->see($returnData);
