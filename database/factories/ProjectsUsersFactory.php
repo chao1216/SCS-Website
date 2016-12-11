@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Projects\Project;
+use App\Models\User;
+use \App\Models\Pivots\ProjectsUsers;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +23,13 @@ use App\Models\Projects\Project;
 
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Project::class,
+$factory->define(ProjectsUsers::class,
 
     function (Faker\Generator $faker) {
-
-    return [
-        'name' => $faker->name,
-        'caption' => $faker->paragraph,
-        'imgUrl' => 'https://tctechcrunch2011.files.wordpress.com/2015/04/codecode.jpg?w=738',
-    ];
-});
+        $user = User::orderByRaw("RAND()")->first();
+        $project = Project::orderByRaw("RAND()")->first();
+        return [
+            'project_id' => $project->id,
+            'user_id' => $user->id
+        ];
+    });

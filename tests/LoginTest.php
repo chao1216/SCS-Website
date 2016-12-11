@@ -1,5 +1,5 @@
 <?php
-use App\User;
+use App\Models\User;
 
 /*
  * TODO: need to test the actual controller that is

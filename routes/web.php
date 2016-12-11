@@ -45,4 +45,10 @@ Route::get('members', function () {
 
 Route::get('about', 'AboutController@show')->name('about');
 
+// Testing the relationships
+Route::get('test', function() {
+    $project = \App\Models\Projects\Project::find(1);
+    return $project->users;
+});
+
 Auth::routes();
