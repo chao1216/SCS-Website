@@ -4,8 +4,8 @@ profileApp.controller('ProfileController',
 function ($http,$scope,API_URL) {
   $scope.profile = [];
   $http.get(API_URL + "profile")
-  .success(function(response) {
-    $scope.profile = response;
+  .then(function(response) {
+    $scope.profile = response.data;
   });
 
   $scope.toggle = function (modalstate) {
@@ -21,12 +21,11 @@ function ($http,$scope,API_URL) {
       url: url,
       data: $.param($scope.profile),
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-    }).success(function(response) {
+    }).then(function(response) {
       console.log(response);
       location.reload();
     }).error(function(response) {
       console.log(response);
-      alert('This is embarassing. An error has occured. Please check the log for details');
     });
   }
 });
