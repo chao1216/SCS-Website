@@ -3,7 +3,7 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use App\User;
+use App\Models\User;
 
 /**
  * Class ProfileTest
@@ -13,7 +13,7 @@ use App\User;
  *  ProfileController.php
  */
 
-class ProfileTest extends TestCase
+class ProfilePageTest extends TestCase
 {
 
     protected $testUser;

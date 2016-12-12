@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Models\Projects\Project;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class ProjectTableSeeder extends Seeder
@@ -14,6 +17,8 @@ class ProjectTableSeeder extends Seeder
         // creates fake data to play with/see in the views
         // the factory makes 10 Project models
         // and persists them in the database
-        factory(\App\Project::class, 10)->create();
+        factory(Project::class, 10)->create();/*->each(function($project) {
+            //$project->users->save(factory(User::class)->make());
+        });;*/
     }
 }

@@ -15,14 +15,16 @@ class CreateProjectUploadsTable extends Migration
     {
         Schema::create('project_uploads', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('picName');
+            $table->string('uploadName');
             $table->string('filePath');
-            $table->integer('projectId')->unsigned();
-            // Todo: add foreign key that points to pictures/videos that showcase the project
-            $table->foreign('projectId')
-                ->references('id')->on('projects');
+            $table->integer('project_id')->unsigned();
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->timestamps();
         });
+
+        /*Schema::table('project_uploads',function(Blueprint $table) {
+            $table->foreign('project_id')->references('id')->on('projects');
+        });*/
     }
 
     /**

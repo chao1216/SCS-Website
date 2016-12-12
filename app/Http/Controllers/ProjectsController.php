@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Project;
+use App\Models\Projects\Project;
 
 class ProjectsController extends Controller
 {

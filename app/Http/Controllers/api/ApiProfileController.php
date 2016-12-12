@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\api;
 
-use App\User;
+use App\Models\User;
+use App\Models\Projects\Project;
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,8 +13,21 @@ class ApiProfileController extends Controller
 {
     public function show($id = null)
     {
+        // TODO: decouple the session based laravel authentication by sending auth tokens
+        // TODO: https://scotch.io/tutorials/token-based-authentication-for-angularjs-and-laravel-apps
         // return JSON info of authenticated user
-        return User::find(Auth::id());
+        return User::with('projects')->find(Auth::id());
+    }
+
+    public function updateProjects($projectId = null) {
+        if($projectId != null) {
+            $user = User::find(Auth::id());
+            if(!$user->projects->contains($projectId))
+                $user->projects()->attach($projectId);
+            // add else line that tells callee that you tried adding a duplicate
+        }
+        // reload the user model with updated
+        return User::find(Auth::id())->projects;
     }
 
     public function update(Request $request)

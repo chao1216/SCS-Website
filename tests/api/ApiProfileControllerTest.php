@@ -3,7 +3,7 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use App\User;
+use App\Models\User;
 
 class ApiProfileControllerTest extends TestCase
 {
@@ -47,7 +47,7 @@ class ApiProfileControllerTest extends TestCase
      */
     public function assertProfileAttributesReturned()
     {
-        $returnData = User::find($this->testUser->id);
+        $returnData = User::with('projects')->find($this->testUser->id);
         $this->login()
             ->visit(ApiProfileControllerTest::API_URL . 'profile')
             ->see($returnData);

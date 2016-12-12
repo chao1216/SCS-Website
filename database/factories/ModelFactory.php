@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -19,7 +21,7 @@
 
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(User::class, function (Faker\Generator $faker) {
     static $password;
     $bio = 'Anthony Casalena is the Founder and CEO of Squarespace, which he started from his dorm room in 2003. During the company’s early years, Anthony acted as the sole engineer, designer, and support representative for the entire Squarespace platform, allowing for it to be a stable business from the outset. In addition to his main responsibilities in running the company and setting overall product strategy, he remains actively involved in the engineering, design, and product teams within the organization. Anthony holds a Bachelor of Science in Computer Science from the University of Maryland.';
     return [

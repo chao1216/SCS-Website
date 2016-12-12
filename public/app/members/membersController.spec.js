@@ -11,8 +11,9 @@ describe('MembersController', function() {
         API = API_URL;
         $httpBackend = _$httpBackend_;
         // mock a call to the API_URL/members url
-        $httpBackend.expectGET(API_URL + 'members').respond([{name : "Member of Computing Club",
-                                                              github_link_url : "http://github.com"}]);
+        $httpBackend.expectGET(API_URL + 'members')
+                    .respond([{name : "Member of Computing Club",
+                               githubProfileLink : "http://github.com"}]);
         // load MembersController with the given scope
         ctrl = $controller('MembersController', {$scope: scope});
     }));
@@ -23,6 +24,6 @@ describe('MembersController', function() {
         // have to flush to get the mocked response
         $httpBackend.flush();
         expect(scope.members).toEqual([{name : "Member of Computing Club",
-                                        github_link_url : "http://github.com"}]);
+                    githubProfileLink : "http://github.com"}]);
     });
 });

@@ -66,13 +66,23 @@
                         </div>
                         <div>
                             <a href="#" class="btn btn-primary">Change Password</a>
-                            <a href="#" class="btn btn-default" ng-click="toggle()">Edit Profile</a>
+                            <a href="#" class="btn btn-default" ng-click="showCredentialForm()">Edit Profile</a>
+                            <a href="#" class="btn btn-default" ng-click="showProjectForm()">Add or Create Project</a>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Show users projects if they have any -->
+            <div ng-if="profile.hasProjects()">
+                @{{ profile.projects }}
+            </div>
+            <div ng-if="!profile.hasProjects()">
+                <h1>You haven't built or added projects! Go make something!</h1>
+            </div>
+
             <!-- End of member info -->
+
 
             <!-- Modal Form
 
@@ -80,7 +90,7 @@
             TODO: Add biography text area to the modal form
             -->
 
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            <div class="modal fade" id="modal-credential" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -101,7 +111,9 @@
                                                placeholder="Full Name" value="@{{profile.name}}"
                                                ng-model="profile.name" ng-required="true">
                                         <span class="error"
-                                              ng-show="profileForm.name.$invalid && profileForm.name.$touched">Name field is required</span>
+                                              ng-show="profileForm.name.$invalid && profileForm.name.$touched">
+                                                    Name field is required
+                                            </span>
                                     </div>
                                 </div>
                                 <!--
@@ -146,33 +158,11 @@
                                     <div class="col-sm-9">
                                         <input type="url" class="form-control" id="linkedInLink" name="linkedInLink"
                                                placeholder="LinkedIn Profile Link"
-                                               value="@{{profile.linkedInLink}}"
+                                               value="@{{profiles.linkedInLink}}"
                                                ng-model="profile.linkedInLink">
                                         <span class="error" ng-show="profileForm.linkedInLink.$error.url">Please enter a valid url</span>
                                     </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Biography</label>
-                                    <div class="col-sm-9">
-                                            <textarea type="text" class="form-control" id="biography" name="biography"
-                                                      ng-maxlength="8000"
-                                                      placeholder="My biography..."
-                                                      value="@{{profile.biography}}"
-                                                      ng-model="profile.biography">
-                                            <span class="error" ng-show="profileForm.biography.$error.maxlength">Max character length of 8000</span>
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">Profile Image Upload</label>
-                                    <div class="col-sm-9">
-                                       <input type="file" name="image" class="form-control" id="image"
-                                              value="@{{profile.imgurl}}">
-                                    </div>
-                                </div>
-
 
                             </form>
                         </div>
@@ -185,7 +175,91 @@
                     </div>
                 </div>
             </div>
-            <!-- End of modal Form -->
+            <!-- End of Modal Credential Form -->
+
+            <!-- Modal Project Form -->
+
+            <div class="modal fade" id="modal-project" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">×</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Add or Post New Project</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <form name="profileForm" class="form-horizontal" novalidate="">
+
+                                <div class="form-group error">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control has-error" id="name" name="name"
+                                               placeholder="Full Name" value="@{{profile.name}}"
+                                               ng-model="profile.name" ng-required="true">
+                                        <span class="error"
+                                              ng-show="profileForm.name.$invalid && profileForm.name.$touched">
+                                                    Name field is required
+                                            </span>
+                                    </div>
+                                </div>
+                                <!--
+
+
+                                TODO: Add the other properties listed above to the form
+
+                                -->
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="email" name="email"
+                                               placeholder="Email Address" value="@{{profile.email}}"
+                                               ng-model="profile.email" ng-required="true">
+                                        <span class="help-inline"
+                                              ng-show="profileForm.email.$invalid
+                                              && profileForm.email.$touched">Valid Email field is required</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">GitHub Profile</label>
+                                    <div class="col-sm-9">
+                                        <input type="url" class="form-control" id="githubProfileLink"
+                                               name="githubProfileLink" placeholder=""
+                                               value="@{{profile.githubProfileLink}}"
+                                               ng-model="profile.githubProfileLink" ng-required="true">
+                                        {{--<span class="error" ng-show="profileForm.githubProfileLink.$error.required
+                                        && profileForm.githubProfileLink.$touched">Please provide your GitHub Portfolio link</span>
+                                        <span class="error" ng-show="profileForm.githubProfileLink.$error.url">Please enter a valid url</span>--}}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">LinkedIn Profile</label>
+                                    <div class="col-sm-9">
+                                        <input type="url" class="form-control" id="linkedInLink" name="linkedInLink"
+                                               placeholder="LinkedIn Profile Link"
+                                               value="@{{profiles.linkedInLink}}"
+                                               ng-model="profile.linkedInLink">
+                                        <span class="error" ng-show="profileForm.linkedInLink.$error.url">Please enter a valid url</span>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="btn-save"
+                                    ng-click="save(profile.id)"
+                                    ng-disabled="profileForm.$invalid">Save changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End of Modal Project Form -->
         </div>
     </div>
 @stop
