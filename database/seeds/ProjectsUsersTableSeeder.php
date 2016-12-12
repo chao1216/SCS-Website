@@ -13,4 +13,5 @@ class ProjectsUsersTableSeeder extends Seeder
     {
         factory(App\Models\Pivots\ProjectsUsers::class, 10)->create();
     }
+
 }
