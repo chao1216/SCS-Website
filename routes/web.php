@@ -45,4 +45,13 @@ Route::get('members', function () {
 
 Route::get('about', 'AboutController@show')->name('about');
 
+Route::group(['middleware' => 'web'], function () {
+    Route::get('fileUpload', function () {
+        return view('fileUpload');
+    });
+    Route::post('fileUpload', ['as'=>'fileUpload','uses'=>'FileUploadController@fileUpload']);
+});
+
 Auth::routes();
+
+

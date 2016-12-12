@@ -36,8 +36,8 @@
                             <h2>@{{ member.name }}</h2>
                             <h3>Title</h3>
                             <p>@{{ member.biography }}</p>
-                            <a href="@{{ member.github_profile_link }}">GitHub</a><br>
-                            <a href="@{{ member.linkedIn_link }}">LinkedIn</a>
+                            <a href="@{{ member.githubProfileLink }}">GitHub</a><br>
+                            <a href="@{{ member.linkedInLink }}">LinkedIn</a>
                         </div>
                     </div>
                     <div ng-show="$index % 2 != 0">
@@ -47,8 +47,8 @@
                             <!-- TODO: Add title into database -->
                             <h3>Title</h3>
                             <p>@{{ member.biography }}</p>
-                            <a href="@{{ member.github_profile_link }}">GitHub</a><br>
-                            <a href="@{{ member.linkedIn_link }}">LinkedIn</a>
+                            <a href="@{{ member.githubProfileLink }}">GitHub</a><br>
+                            <a href="@{{ member.linkedInLink }}">LinkedIn</a>
                         </div>
 
                         <div class="column">
@@ -78,8 +78,8 @@
                                 running the company and setting overall product strategy, he remains actively involved
                                 in the engineering, design, and product teams within the organization. Anthony holds a
                                 Bachelor of Science in Computer Science from the University of Maryland.</p>
-                            <a href="@{{ member.github_profile_link }}">GitHub</a><br>
-                            <a href="@{{ member.linkedIn_link }}">LinkedIn</a>
+                            <a href="@{{ member.githubProfileLink }}">GitHub</a><br>
+                            <a href="@{{ member.linkedInLink }}">LinkedIn</a>
                         </div>
                     </div>
 

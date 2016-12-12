@@ -20,7 +20,7 @@
                     @for($c = 0; $c<$numPicsPerRow; $c++)
                         <th>
                             <figure>
-                                <img style="width:300px" src="{{$projects[$numPicsPerRow * $i + $c]->img_url}}" alt="">
+                                <img style="width:300px" src="{{$projects[$numPicsPerRow * $i + $c]->imgUrl}}" alt="">
                                 <figcaption>
                                     <div style="width:300px">
                                         <h5>
@@ -39,7 +39,7 @@
             @for($i = count($projects) - (count($projects) % $numPicsPerRow); $i< count($projects); $i++)
                 <th>
                     <figure>
-                        <img style="width:300px" src="{{$projects[$i]->img_url}}" alt="">
+                        <img style="width:300px" src="{{$projects[$i]->imgUrl}}" alt="">
                         <figcaption>
                             <div style="width:300px">
                                 <h5>
